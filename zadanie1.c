@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//vypisu sa pociatocne hodnoty 
 void prvy_vypis(double m,double T,double H,double g,double vsoft,double dt){
     printf("m=%.3lf\n",m);
     printf("T=%.3lf\n",T);
@@ -9,6 +10,8 @@ void prvy_vypis(double m,double T,double H,double g,double vsoft,double dt){
     printf("dt=%.3lf\n",dt);
 
 }
+
+//vypocet de
 double vypocet_de(double T,double m,double g,double H){
     double A = T/m;
     double df = ((A-g)*H)/A;
@@ -16,6 +19,7 @@ double vypocet_de(double T,double m,double g,double H){
     return de;
 
 }
+//zistovanie ci je motor zapnuty
 int stav_motora(double vsoft,double v,double h, double de){
     if(v<vsoft & h<=de){
         return 1;
@@ -25,16 +29,21 @@ int stav_motora(double vsoft,double v,double h, double de){
     }
 
 }
+
+//vypocet h
 double vypocet_h(double h,double v,double dt,double a){
     h = h + (v * dt) + ((a*(dt*dt))/2)  ;
     return h;
 
 }
+
+//vypocet v
 double vypocet_v(double v,double a,double dt){
     v = v + a*dt;
     return v;
 
 }
+//cyklus vypoctov ktory sa opakuje pokym vyska nie je 0 
 void vypis_simulacie(double vsoft, double v, double H, double g, double dt,double T,double m,double de){
 
 
