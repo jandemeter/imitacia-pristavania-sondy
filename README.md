@@ -1,6 +1,2 @@
 # imitacia-pristavania-sondy
-Naprogramujte konzolovú
-aplikáciu v jazyku C, ktorá
-bude simulovať pristávanie
-sondy na povrchu
-vesmírneho telesa.
+Konzolová aplikácia v jazyku C, ktorá simuluje pristávanie sondy na povrchu vesmírneho telesa.
